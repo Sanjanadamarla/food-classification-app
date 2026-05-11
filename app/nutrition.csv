@@ -1,0 +1,12 @@
+food_name,calories,protein,carbs,fat,health_tip
+Bread,265,9,49,3,"Good source of carbohydrates."
+Dairy Product,150,8,12,8,"Provides calcium and protein."
+Dessert,350,4,50,15,"Consume in moderation due to high sugar."
+Egg,155,13,1,11,"Excellent source of protein."
+Fried Food,312,8,35,18,"High in fat; eat occasionally."
+Meat,250,26,0,15,"Rich in protein and iron."
+Noodles/Pasta,158,6,31,1,"Provides energy from carbohydrates."
+Rice,130,2.7,28,0.3,"Staple carbohydrate source."
+Seafood,206,22,0,12,"Rich in protein and omega-3."
+Soup,90,3,12,2,"Light and hydrating."
+Vegetables/Fruit,80,2,18,0.5,"Rich in vitamins and fiber."

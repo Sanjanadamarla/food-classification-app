@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Classification Using Deep Learning</title>
+
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+    <div class="card shadow-lg border-0 rounded-4 p-4 mx-auto" style="max-width: 900px;">
+        <h1 class="text-center mb-3">🍽️ Food Classification Using Deep Learning</h1>
+        <p class="text-center text-muted mb-4">
+            ✨ Upload a delicious food image and instantly discover its nutritional profile.
+        </p>
+
+        <!-- Upload Form -->
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <input
+                        type="file"
+                        name="image"
+                        class="form-control form-control-lg"
+                        accept="image/*"
+                        required
+                >
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg w-100">
+                Predict Food
+            </button>
+        </form>
+
+        <!-- Error Message -->
+        {% if error %}
+        <div class="alert alert-danger mt-4">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <!-- Prediction Result -->
+        {% if result %}
+        <div class="row mt-5 g-4">
+            <!-- Uploaded Image -->
+            <div class="col-md-5 text-center">
+                <h4 class="mb-3">Uploaded Image</h4>
+                <img
+                        src="{{ url_for('static', filename=image_url) }}"
+                        alt="Uploaded Food"
+                        class="img-fluid rounded-4 shadow"
+                        style="max-height: 350px; object-fit: cover;"
+                >
+            </div>
+
+            <!-- Prediction Details -->
+            <div class="col-md-7">
+                <h3 class="mb-3">🔍 Prediction Result</h3>
+
+                <p><strong>Food:</strong> {{ result.food_name }}</p>
+                <p><strong>Confidence:</strong> {{ result.confidence }}%</p>
+
+                <h4 class="mt-4">🥗 Nutrition Information</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>Calories:</strong>
+                        {{ result.nutrition.calories }} kcal
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Protein:</strong>
+                        {{ result.nutrition.protein }} g
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Carbohydrates:</strong>
+                        {{ result.nutrition.carbs }} g
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Fat:</strong>
+                        {{ result.nutrition.fat }} g
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Health Tip:</strong>
+                        {{ result.nutrition.health_tip }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>
