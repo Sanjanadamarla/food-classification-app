@@ -11,7 +11,6 @@ Users can upload an image of a food item, and the application predicts the food 
 🥗 Show nutritional information
 🌐 Web-based user interface
 ☁️ Ready for future deployment
-
 🧠 Technologies Used
 Python
 TensorFlow
@@ -23,12 +22,11 @@ Flask
 NumPy
 Pandas
 Pillow
-
+🗂️ Dataset
 
 The project uses the Food-101 dataset and can be extended with custom food classes.
 
-Example classes:
-
+Example Classes
 Pizza
 Burger
 Biryani
@@ -36,8 +34,6 @@ Dosa
 Idli
 Samosa
 Pasta
-
-
 🏗️ Model Architecture
 
 The application uses transfer learning with MobileNetV2.
@@ -50,7 +46,6 @@ Use MobileNetV2 as the base model
 Add custom dense layers
 Train the model
 Save the trained model as food_classifier.h5
-
 📊 Example Prediction
 Attribute	Value
 Predicted Class	Biryani
@@ -59,7 +54,6 @@ Calories	320 kcal
 Protein	12 g
 Carbohydrates	42 g
 Fat	10 g
-
 ⚙️ Installation
 1. Clone the Repository
 git clone https://github.com/Sanjanadamarla/food-classification-app.git
@@ -67,13 +61,9 @@ cd food-classification-app
 2. Create a Virtual Environment
 python -m venv venv
 3. Activate the Virtual Environment
-
 Windows
-
 venv\Scripts\activate
-
 Mac/Linux
-
 source venv/bin/activate
 4. Install Dependencies
 pip install -r requirements.txt
@@ -81,7 +71,6 @@ pip install -r requirements.txt
 python app.py
 6. Open in Browser
 http://127.0.0.1:5000/
-
 📋 Requirements
 Flask
 tensorflow
@@ -91,10 +80,8 @@ pandas
 pillow
 scikit-learn
 matplotlib
-
 🎯 Future Enhancements
 Multi-food detection in a single image
-
 Calorie tracking and meal recommendations
 Mobile application development
 Cloud deployment
