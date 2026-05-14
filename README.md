@@ -94,6 +94,7 @@ matplotlib
 
 🎯 Future Enhancements
 Multi-food detection in a single image
+
 Calorie tracking and meal recommendations
 Mobile application development
 Cloud deployment
